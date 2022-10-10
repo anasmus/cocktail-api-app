@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --open : ' \f106';
+  --close: ' \f107';
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #5b9aa0;
+  color: #f4f4f4;
+  text-align: center;
+}
+.wrapper {
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+/* LAYOUT */
+.header {
+  margin-top: 20px;
+  padding-block: 40px;
+  background-color: blueviolet;
+}
+.main {
+  margin-top: 50px;
+}
+/* COMPONENTS */
+/* 1. Form */
+.form {
+  display: flex;
+  font-size: 2em;
+  padding-inline: 10px;
+}
+.form__label {
+  align-self: center;
+}
+.form__input {
+  font-size: 1em;
+  margin-left: 10px;
+  flex-grow: 1;
+  text-align: center;
+}
+.form__btn {
+  font-size: 1em;
+  background-color: #87bdd8;
+  color: #092b87;
+  cursor: pointer;
+  transition: all 150ms ease-in;
+}
+.form__btn:hover {
+  background-color: #0385c7;
+  color: #ecf0f9;
+}
+.form__btn:active, .control__btn:active {
+  box-shadow: inset 1px 3px 15px 5px rgba(0, 0, 0, 0.2);
+}
+.form__input, .form__btn, .control__btn {
+  border: 0;
+}
+.form__input, .form__btn, .img, .control__btn {
+  box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 786px) {
+  .form {
+    flex-direction: column;
+  }
+  .form__input {
+    margin-left: 0;
+  }
+}
+/* 2. Image Section */
+.drink__heading {
+  color: #222222;
+  font-size: 3rem;
+  text-shadow: 1px 2px 15px rgba(0, 0, 0, 0.4);
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+@media (max-width: 572px) {
+  .wrapper {
+    width: 90%;
+  }
+  .header {
+    font-size: 0.6em;
+  }
+  .drink__heading {
+    font-size: 1.8rem;
+  }
+  .grid-container {
+    grid-template-rows: 300px 50px;
+  }
+  .control__btn--left {
+    grid-row: 2 / 3;
+  }
+  .control__btn--right {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+  }
+  .img {
+    grid-column: 1 / 4;
+  }
+}
+/* 3. Controls Button */
+.control__btn {
+  width: 40px;
+  height: 40px;
+  font-size: 1em;
+  background-color: #d9d9d9;
+  color: rgb(0, 0, 75);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 150ms ease-in;
+}
+.control__btn:hover {
+  background-color: white;
+}
+.control__btn--left::before {
+  content: '\f060';
+  font: var(--fa-font-solid);
+}
+.control__btn--right::before {
+  content: '\f061';
+  font: var(--fa-font-solid);
+}
+/* 4. Instructions and Ingredients Section */
+.ingredients, .instructions {
+  margin-block: 10px;
+}
+.ingredients__heading, .instructions__heading {
+  user-select: none;
+  cursor: pointer;
+}
+.ingredients__heading::after, .instructions__heading::after {
+  content: var(--close);
+  font: var(--fa-font-solid);
+}
+.ingredients__list, .instructions__list {
+  margin-block: 10px;
+  display: none;
+  list-style-type: none;
+}
+.ingredients__list--shown .ingredients__heading::after, 
+.instructions__list--shown .instructions__heading::after {
+  content: var(--open);
+}
+.ingredients__list--shown .ingredients__list,
+.instructions__list--shown .instructions__list {
+  display: block;
+}

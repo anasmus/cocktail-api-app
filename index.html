@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="imgs/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Cocktail API App</title>
+  </head>
+  <body>
+    <header class="header wrapper">
+      <h1>Welcome to CodeTown Bar</h1>
+      <h2>What Drink would you like?</h2>
+    </header>
+    <main class="main wrapper">
+      <form class="form" id="form">
+        <label for="drink" class="form__child form__label">Drink: </label>
+        <input type="text" id="drink" class="form__child form__input">
+        <button class="form__btn form__child" id="button" type="button">Search</button>
+      </form>
+      <section class="grid-container">
+        <button class="control__btn control__btn--left" type="button"></button>
+          <img src="imgs/cocktail.webp" alt="cocktail" class="img" id="drinkImage">
+        <button class="control__btn control__btn--right" type="button"></button>
+      </section>
+      <h2 id="drinkName" class="drink__heading">Drink Name</h2>
+      <section class="ingredients" id="ingredients">
+        <h2 class="ingredients__heading">Ingredients</h2>
+      </section>
+      <section class="instructions" id="instructions">
+        <h2 class="instructions__heading">Instructions</h2>
+      </section>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>
